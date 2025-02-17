@@ -1,0 +1,146 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "name": "Merfolk Stabber",
+            "description": "Watch where you swim or you might get poked!",
+            "price": 53.99,
+            "category": 2,
+            "image_url": "https://3d-ace.com/wp-content/uploads/3d-sculpting.jpg",
+            "image": "1.webp"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "name": "Giant Ant",
+            "description": "I, for one, welcome our new insect overlords.",
+            "price": 58.99,
+            "category": 2,
+            "image_url": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/373aee80978169.5d3a1f2709e9f.jpg",
+            "image": "2.webp"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "name": "Scifi Raiders Set",
+            "description": "Set of some sci-fi raiders. Perfect for your tabletop wargame.",
+            "price": 205.99,
+            "category": 1,
+            "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/67cab663-5350-4400-85f9-f2fddc295303/db9nw6o-0d9a3427-2409-4028-84a8-e571bad47c7b.jpg/v1/fill/w_1280,h_394,q_75,strp/3d_sculpts_by_garagegaming_db9nw6o-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9Mzk0IiwicGF0aCI6IlwvZlwvNjdjYWI2NjMtNTM1MC00NDAwLTg1ZjktZjJmZGRjMjk1MzAzXC9kYjludzZvLTBkOWEzNDI3LTI0MDktNDAyOC04NGE4LWU1NzFiYWQ0N2M3Yi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.vXCKJe1lJHeqI1EVB9aPrVc8e-KWOtdccnP9j4jsUvQ",
+            "image": "3.webp"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "name": "Slimer",
+            "description": "Legally-distinct ghostly entity.",
+            "price": 169.99,
+            "category": 3,
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fandrewg3d.weebly.com%2Fuploads%2F1%2F2%2F6%2F7%2F126793336%2Fslimerv1_orig.jpg&f=1&nofb=1&ipt=4edf98a38dc432088591550072f6d7ae3d0d84cdf8a4364e6db2d15004838eeb&ipo=images",
+            "image": "4.webp"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "name": "Ursula",
+            "description": "A beautiful sea witch.",
+            "price": 232.99,
+            "category": 3,
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F12%2F09%2F9e%2F12099ef22b81713edff2039547797e12.jpg&f=1&nofb=1&ipt=201824824391753a0f574f9c50bc72100e64bd97b4df9ee272b230077a687ddb&ipo=images",
+            "image": "5.webp"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "name": "Chimera",
+            "description": "A beast of myth and legend. But scifi.",
+            "price": 30.99,
+            "category": 1,
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.fundrazr.com%2Fcampaigns%2F45215b7546ba40229f3ec6279221ba2d.png%3Fcb%3D1618736463&f=1&nofb=1&ipt=4cb535e4f68fb479e67e5d115ea8dfb2eced306646c998feaed4ae4bdd41870c&ipo=images",
+            "image": "6.webp"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "name": "Sultan",
+            "description": "A regal figure.",
+            "price": 59.0,
+            "category": 3,
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fandrewg3d.weebly.com%2Fuploads%2F1%2F2%2F6%2F7%2F126793336%2Fsultan.jpg&f=1&nofb=1&ipt=1b4439b8036da20b65eed116b3e12a7b3279d0062b1bf484fbc5996bc46ee422&ipo=images",
+            "image": "7.webp"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "name": "Persephone",
+            "description": "A goddess of the underworld.",
+            "price": 36.99,
+            "category": 3,
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.etsystatic.com%2F47996429%2Fr%2Fil%2F0cd6e5%2F5535805363%2Fil_794xN.5535805363_bd9e.jpg&f=1&nofb=1&ipt=028bed9ed53cc04b859682cef12510017a9304e84bac0e3fee59754598329a11&ipo=images",
+            "image": "8.webp"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "name": "Creature",
+            "description": "A creature of the night.",
+            "price": 169.99,
+            "category": 1,
+            "image_url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F81%2Fb7%2F83%2F81b7832d0fad8aca5ab1069cdf991752--christopher-george-alien.jpg&f=1&nofb=1&ipt=17264003fea02d3d86e434e7b7e7eb1448c2dd27d1c1c85b5f0ad42d77090972&ipo=images",
+            "image": "9.webp"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+            "name": "Hellboy",
+            "description": "A demon with a heart of gold.",
+            "price": 33.99,
+            "category": 3,
+            "image_url": "https://i.pinimg.com/originals/a7/df/f0/a7dff04ddc006160c982c80397c58d34.jpg",
+            "image": "10.webp"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "name": "Stormcast Eternal",
+            "description": "A warrior of Sigmar.",
+            "price": 29.99,
+            "category": 2,
+            "image_url": "https://www.zbrushcentral.com/uploads/default/original/4X/2/3/0/2305e4814d6cef250ee445b9f5458b57e28f5e2d.jpeg",
+            "image": "11.webp"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "name": "Brute",
+            "description": "A hulking brute.",
+            "price": 19.99,
+            "category": 2,
+            "image_url": "https://i.etsystatic.com/23652188/r/il/540e49/6445244528/il_800x800.6445244528_k2pu.jpg",
+            "image": "12.webp"
+        }
+    }
+]
