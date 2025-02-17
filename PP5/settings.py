@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     'mikeysculpts-7c49ca735d97.herokuapp.com',
+    'stripe.com',
 ]
 
 

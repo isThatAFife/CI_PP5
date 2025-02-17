@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -140,6 +141,7 @@ def checkout(request):
     return render(request, template, context)
 
 
+@csrf_exempt
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
