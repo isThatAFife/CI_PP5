@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.http import JsonResponse
 
 from .models import Product, Category, Comment
 from .forms import ProductForm, CommentForm
@@ -77,12 +78,15 @@ def product_detail(request, product_id):
                 new_comment.product = product
                 new_comment.author = request.user
                 new_comment.save()
-                messages.info(request, "Your comment is awaiting approval")  # Approval notice
+                # Approval notice
+                messages.info(request, "Your comment is awaiting approval")
                 return redirect('product_detail', product_id=product_id)
             else:
-                messages.error(request, "Error submitting comment - please check the form")
+                messages.error(
+                    request, "Error submitting comment - please check the form")
         else:
-            messages.error(request, "You must be logged in to leave a comment.")
+            messages.error(
+                request, "You must be logged in to leave a comment.")
             return redirect('home')  # Redirect to login page if not logged in
     else:
         comment_form = CommentForm()
@@ -94,7 +98,6 @@ def product_detail(request, product_id):
     }
 
     return render(request, "products/product_detail.html", context)
-
 
 
 @login_required
@@ -184,7 +187,7 @@ def comment_edit(request, product_id, comment_id):
             updated_comment.active = False  # Reset approval status after edit
             updated_comment.save()
             messages.success(request, "Comment updated successfully!")
-            return redirect('product_detail', product_id=product_id)
+            return redirect(reverse("product_detail", args=[product.id]))
     else:
         comment_form = CommentForm(instance=comment)
 
@@ -195,7 +198,6 @@ def comment_edit(request, product_id, comment_id):
     }
     return render(request, "products/comment_edit.html", context)
 
-
 @login_required
 def comment_delete(request, product_id, comment_id):
     """
@@ -204,11 +206,12 @@ def comment_delete(request, product_id, comment_id):
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
         comment = get_object_or_404(Comment, pk=comment_id)
-
         if comment.author == request.user or request.user.is_superuser:
             comment.delete()
             messages.success(request, "Comment deleted successfully")
-            return redirect('product_detail', product_id=product_id)
-    
+            # Return JSON if this is an AJAX request
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({"success": True})
+        return redirect(reverse("product_detail", args=[product.id]))
     messages.error(request, "Error deleting comment")
-    return redirect('product_detail', product_id=product_id)
+    return redirect(reverse("product_detail", args=[product.id]))

@@ -126,7 +126,7 @@
             <div class="card-body">
                 {% for comment in comments %}
                 <div id="comment{{ comment.id }}"
-                    class="p-2 comments {% if not comment.approved and comment.author == user %} faded {% elif not comment.approved %} d-none {% endif %}">
+                    class="p-2 comments {% if not comment.active and comment.author == user %} faded {% elif not comment.active %} d-none {% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">{{ comment.created_on }}</span> wrote:
@@ -134,7 +134,7 @@
                     <div id="comment{{ comment.id }}">
                         {{ comment.body | linebreaks }}
                     </div>
-                    {% if not comment.approved and comment.author == user %}
+                    {% if not comment.active and comment.author == user %}
                     <p class="approval">This comment is awaiting approval</p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
@@ -142,7 +142,7 @@
                     <a href="#" class="btn btn-edit" aria-label="Edit comment" comment_id="{{ comment.id }}" data-edit-url="{% url 'comment_edit' product.id comment.id %}">Edit</a>
                     <!-- Delete button -->
                     <button class="btn btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                    data-comment-id="{{ comment.id }}" data-game-slug="{{ product.id }}" aria-label="Delete comment">Delete</button>
+                    data-comment-id="{{ comment.id }}" data-product="{{ product.id }}" aria-label="Delete comment">Delete</button>
                     {% endif %}
                 </div>
                 {% endfor %}
