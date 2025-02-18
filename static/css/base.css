@@ -3,7 +3,6 @@ html {
 }
 
 body {
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -79,7 +78,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: rgb(255, 255, 255);
 	z-index: -1;
 }
 
@@ -173,6 +172,20 @@ input[name='q']::placeholder {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* homepage text container */
+
+.text-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #FFFFFF; 
+    padding: 20px; 
+    border-radius: 10px; 
+    z-index: 1;
+    text-align: center;
+    text-shadow: -1px -1px 0 #666666, 1px -1px 0 #666666, -1px 1px 0 #666666, 1px 1px 0 #666666; 
+    max-width: 400px;
+}
+
 
 /* -------------------------------- Media Queries */
 
@@ -325,5 +338,12 @@ input[name='q']::placeholder {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+
+    .text-container h1 {
+        font-size: 2.5rem;
+    }
+    .text-container h4 {
+        font-size: 1.5rem;
     }
 }
