@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -27,3 +28,23 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+# Comment Model
+# models.py
+# models.py
+class Comment(models.Model):
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=80, blank=True)
+    email = models.EmailField(blank=True)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.body, self.author)
+
+

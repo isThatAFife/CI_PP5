@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Comment
+from .forms import ProductForm, CommentForm
 
 # Create your views here.
 
@@ -65,15 +65,36 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """A view to show individual product details"""
-
     product = get_object_or_404(Product, pk=product_id)
+    comments = product.comments.filter(active=True)
+    new_comment = None
+
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            comment_form = CommentForm(data=request.POST)
+            if comment_form.is_valid():
+                new_comment = comment_form.save(commit=False)
+                new_comment.product = product
+                new_comment.author = request.user
+                new_comment.save()
+                messages.info(request, "Your comment is awaiting approval")  # Approval notice
+                return redirect('product_detail', product_id=product_id)
+            else:
+                messages.error(request, "Error submitting comment - please check the form")
+        else:
+            messages.error(request, "You must be logged in to leave a comment.")
+            return redirect('home')  # Redirect to login page if not logged in
+    else:
+        comment_form = CommentForm()
 
     context = {
         "product": product,
+        "comments": comments,
+        "comment_form": comment_form,
     }
 
     return render(request, "products/product_detail.html", context)
+
 
 
 @login_required
@@ -148,3 +169,46 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, "Product deleted!")
     return redirect(reverse("products"))
+
+
+@login_required
+def comment_edit(request, product_id, comment_id):
+    product = get_object_or_404(Product, pk=product_id)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST, instance=comment)
+        if comment_form.is_valid() and comment.author == request.user:
+            updated_comment = comment_form.save(commit=False)
+            updated_comment.product = product
+            updated_comment.active = False  # Reset approval status after edit
+            updated_comment.save()
+            messages.success(request, "Comment updated successfully!")
+            return redirect('product_detail', product_id=product_id)
+    else:
+        comment_form = CommentForm(instance=comment)
+
+    context = {
+        "product": product,
+        "comment_form": comment_form,
+        "editing_comment_id": comment_id,
+    }
+    return render(request, "products/comment_edit.html", context)
+
+
+@login_required
+def comment_delete(request, product_id, comment_id):
+    """
+    Delete a product comment
+    """
+    if request.method == "POST":
+        product = get_object_or_404(Product, pk=product_id)
+        comment = get_object_or_404(Comment, pk=comment_id)
+
+        if comment.author == request.user or request.user.is_superuser:
+            comment.delete()
+            messages.success(request, "Comment deleted successfully")
+            return redirect('product_detail', product_id=product_id)
+    
+    messages.error(request, "Error deleting comment")
+    return redirect('product_detail', product_id=product_id)
