@@ -171,4 +171,3 @@ cython_debug/
 .pypirc
 
 env.py
-README.md

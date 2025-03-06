@@ -49,27 +49,16 @@
 
   ### Project Goals
 
-    This application aims to provide a comprehensive list of games for multiple platforms, and allow the user to see both an aggregated review score (metascore), and also an average user score. It also aims to allow users to leave their own comments and reviews for their favourite games and in the future will also allow them to contribute their own scores to be added to the 'userscore' field of each game page.
+
 
 ## User Stories
 
 ### Admin
 
-- As a site admin I can add, modify and delete game entries so that I can curate the library.
-- As a site admin I can approve or disapprove comments so that I can filter out objectionable comments.
-- As a Site Admin, I can create or update the about page content so that it is available on the site.
+
 
 ### User
 
-- As a Site User, I can click on the About link so that I can read about the site.
-- As a site user I can view a list of games so that I can find my favourites.
-- As a user I can type the name of a game into a search bar in order to quickly find the game I'm looking for.
-- As a site user I can modify or delete my comment on a post so that I can be involved in the conversation.
-- As a site user I can open a game page so that I can view the game in more detail.
-- As a site user I can register an account so that I can comment on a post.
-- As a site user I can leave comments on a game page so that I can be involved in the conversation.
-- As a site user I can access a page to view all of my comments so that I can keep track of my conversations.
-- As a site user I can view comments on an individual post so that I can read the conversation.
 
 ---
 
@@ -79,13 +68,7 @@
 
 ![screenshot](docs/screenshots/palette.png)
 
-- The colour palette was taken from the Adobe Color Wheel library and is called 'Profile of David statue by Michelangelo Buonarotti replica in vaporwave style'
-- It includes the following colours:
-    - #BF349A
-    - #8C2771
-    - #E7DCF2
-    - #2ABFBF
-    - #29A6A6
+
 
 ### Wireframes
 
@@ -132,13 +115,13 @@
 
 ![screenshot of search results](docs/screenshots/search.png)
 
-- There is a search bar at the top of the page allowing users to quickly search for a particular game they are trying to find, or alternatively all games for a specific console, released a specific year, etc.
+- 
 
 #### Account Registration
 
 ![screenshot of sign up](docs/screenshots/signuppage.png)
 
-- Users are able to register an account in order to leave comments on game pages.
+- Users are able to register an account in order to leave comments on product pages.
 - Registration page includes checks for invalid inputs.
 
 #### About Page
@@ -151,23 +134,17 @@
 
 ![screenshot of my comments](docs/screenshots/mycomments.png)
 
-- Users can see all of the comments they have left with links to the game page they left them on.
+- Users can see all of the comments they have left with links to the product page they left them on.
 
 #### Comment
 
 ![screenshot of comment box](docs/screenshots/comment.png)
 
-- When a user is logged in, they can leave a comment or short review on each game page.
+- When a user is logged in, they can leave a comment or short review on each product page.
 
 ### Future Features
 
-#### Contribute Score
 
-- Users will be able to give each game a score out of 10 which will be added to the 'userscore' field.
-
-#### List Sorting
-
-- Users will be able to sort the library of games by name, release year, score, etc.
 
 ---
 
@@ -385,41 +362,7 @@ I used the W3C HTML validator and found none.
 
 ### Manual Testing
 
-1. Test homepage loading and layout
-2. Verify navbar links (home, about, my comments, register, login, logout) redirect correctly
-3. Check searchbar functionality with various game titles
-4. Test user registration process
-5. Test user login process
-6. Test user logout process
-7. Check game library display and pagination
-8. Verify each game entry shows title, release date, metascore, and user score
-9. Test opening individual game pages
-10. Verify game details are displayed correctly on individual pages
-11. Test leaving a comment on a game page as a logged-in user
-12. Verify comment appears on the game page after submission
-13. Test editing a user's own comment
-14. Test deleting a user's own comment
-15. Verify "My Comments" page displays all user comments correctly
-16. Test admin login process
-17. Verify admin can add a new game entry
-18. Test admin ability to modify existing game entries
-19. Verify admin can delete game entries
-20. Test admin approval/disapproval of user comments
-21. Verify approved comments are visible and disapproved comments are hidden
-22. Test admin ability to create/update About page content
-23. Verify About page content is displayed correctly
-24. Test responsiveness on various devices (desktop, tablet, mobile)
-25. Check cross-browser compatibility (Chrome, Firefox, Safari, Edge)
-26. Verify all forms have proper validation
-27. Test form submission with valid and invalid data
-28. Check for broken links throughout the site
-29. Test search functionality with partial game titles
-30. Verify search results are accurate and relevant
-31. Test pagination in game library
-32. Verify correct user roles and permissions (admin vs regular user)
-33. Verify success messages appear for completed actions
-34. Check for any UI/UX inconsistencies or visual bugs
-35. Verify all images load correctly and have alt text
+
 
 
 ---
@@ -432,12 +375,6 @@ Basic layout/templates from I think therefore I blog tutorial
 
 ### Acknowledgements
 
-[IGDB API for game box art](https://www.igdb.com/api)
-
-[Kaggle for games dataset](https://www.kaggle.com/datasets/destring/metacritic-reviewed-games-since-2000)
-
 [Adobe Color Wheel for colour palette](https://color.adobe.com/create/color-wheel)
 
 [Black for pep8 compliance](https://pypi.org/project/black/)
-
-Big thanks to my mentor Lauren-Nicole Popich for making this mountain seem like a molehill!
