@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://mikeysculpts-7c49ca735d97.herokuapp.com/sitemap.xml
