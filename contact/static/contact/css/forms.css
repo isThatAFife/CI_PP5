@@ -1,0 +1,7 @@
+/* Contact Form */
+
+.large-message {
+    min-height: 150px;
+    height: auto;
+    resize: vertical;
+}

@@ -14,5 +14,9 @@ class ContactForm(forms.ModelForm):
         model = ContactMessage
         fields = ['name', 'email', 'subject', 'message']
         widgets = {
-            'message': forms.Textarea(attrs={'rows': 5}),
+            'message': forms.Textarea(attrs={
+                'rows': 8, 
+                'class': 'large-message' 
+            }),
         }
+        
