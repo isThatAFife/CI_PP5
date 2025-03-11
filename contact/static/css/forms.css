@@ -1,0 +1,29 @@
+/* Target SPECIFICALLY the message textarea */
+textarea#id_message.tall-message-field {
+    min-height: 150px !important;
+    height: 150px !important;
+    resize: vertical;
+    display: block;
+}
+
+/* Prevent Bootstrap from overriding heights */
+.form-control.tall-message-field {
+    height: auto !important;
+}
+
+/* Disable Bootstrap's default textarea scaling */
+textarea.form-control {
+    height: auto !important;
+}
+
+/* Keep other fields compact */
+input.form-control:not([type="textarea"]) {
+    height: 40px;
+}
+
+/* Left-align labels */
+.form-group label {
+    text-align: left !important;
+    display: block;
+    margin-left: 0.5rem;
+}
