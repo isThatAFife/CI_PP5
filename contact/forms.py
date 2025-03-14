@@ -1,4 +1,3 @@
-# contact/forms.py
 from django import forms
 from .models import ContactMessage
 from django.core.validators import MinLengthValidator
@@ -10,6 +9,7 @@ class ContactForm(forms.ModelForm):
         validators=[MinLengthValidator(2, "Name must be at least 2 characters")],
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
+    
     message = forms.CharField(
         validators=[MinLengthValidator(10, "Message must be at least 10 characters")],
         widget=forms.Textarea(attrs={
@@ -23,15 +23,15 @@ class ContactForm(forms.ModelForm):
         model = ContactMessage
         fields = ['name', 'email', 'subject', 'message']
         widgets = {
-            'message': forms.Textarea(attrs={'rows': 5}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'subject': forms.TextInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'rows': 5, 'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
-        
-        # Layout configuration
         self.helper.layout = Layout(
             Field('name', css_class='col-md-6 mb-3'),
             Field('email', css_class='col-md-6 mb-3'),
@@ -39,6 +39,4 @@ class ContactForm(forms.ModelForm):
             Field('message', css_class='tall-message-field mb-3'),
             Submit('submit', 'Send', css_class='btn-primary')
         )
-        
-        # Force left-aligned labels
         self.helper.label_class = 'text-left col-form-label'
