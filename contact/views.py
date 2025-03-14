@@ -11,14 +11,18 @@ class ContactFormView(FormView):
     success_url = reverse_lazy('contact_success')
 
     def form_valid(self, form):
-        form.save()
+        # Save to database
+        message = form.save()
+        
+        # Send email notification
         send_mail(
-            subject=f"New message from {form.cleaned_data['name']}",
-            message=form.cleaned_data['message'],
+            subject=f"New Contact: {message.subject}",
+            message=f"From: {message.name} <{message.email}>\n\n{message.message}",
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.NOTIFY_EMAIL],
+            recipient_list=[settings.DEFAULT_FROM_EMAIL],
             fail_silently=False,
         )
+        
         messages.success(self.request, "Message received successfully!")
         return super().form_valid(form)
     
