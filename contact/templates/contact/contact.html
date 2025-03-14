@@ -28,7 +28,7 @@
             <hr class="my-4">
             <p class="my-2">Want to get in touch? Please fill out the form below to contact Mikey.</p>
             <hr class="my-4">
-            <form method="post" class="mt-4 mx-auto" style="max-width: 600px;">
+            <form method="POST" class="mt-4 mx-auto" style="max-width: 600px;">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-center mt-4">

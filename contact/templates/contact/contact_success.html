@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extra_meta %}
+<meta name="description" content="Contact">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_title %}Contact{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-white">
+            <hr class="my-4">
+            <h1 class="font-semibold text-2xl mb-4">Thank You</h1>
+            <hr class="my-4">
+            <p class="my-2">We've received your message and will respond shortly!</p>
+            <hr class="my-4">
+        </div>
+    </div>
+</div>
+{% endblock %}
